@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.hot-ecosystem</groupId>
+    <artifactId>tims-hapi-build</artifactId>
+    <version>v6.4.0-b1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hapi-fhir-jpaserver-starter-builds.version>6.4.0-b1-SNAPSHOT</hapi-fhir-jpaserver-starter-builds.version>
+        <hapi-fhir.version>6.4.0</hapi-fhir.version>
+        <hapi-extensions.version>0.1.0-dev-SNAPSHOT</hapi-extensions.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.essaid.fhir.hapi</groupId>
+            <artifactId>hapi-fhir-jpaserver-starter-builds</artifactId>
+            <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.essaid.fhir.hapi</groupId>
+            <artifactId>hapi-fhir-jpaserver-starter-builds</artifactId>
+            <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
+            <classifier>starter-overlay</classifier>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-testpage-overlay</artifactId>
+            <version>${hapi-fhir.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.essaid.fhir.hapi</groupId>
+            <artifactId>hapi-extensions</artifactId>
+            <version>${hapi-extensions.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>boot-repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.github.hotecosystem.Main</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                    <configuration>
+                        <overlays>
+                            <overlay>
+                                <groupId>com.essaid.fhir.hapi</groupId>
+                                <artifactId>hapi-fhir-jpaserver-starter-builds</artifactId>
+                                <classifier>starter-overlay</classifier>
+                                <type>war</type>
+                            </overlay>
+                            <overlay>
+                                <groupId>ca.uhn.hapi.fhir</groupId>
+                                <artifactId>hapi-fhir-testpage-overlay</artifactId>
+                                <type>war</type>
+                            </overlay>
+                        </overlays>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
