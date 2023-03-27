@@ -1,0 +1,5 @@
+com.essaid.fhir.hapi.extensions:
+  providers:
+    CSConceptSearchOperation:
+      className: com.github.hotecosystem.hapi.CSConceptSearchOperation
+
