@@ -1,5 +1,10 @@
+server:
+  shutdown: graceful
+
 com.essaid.fhir.hapi.extensions:
   providers:
     CSConceptSearchOperation:
       className: com.github.hotecosystem.hapi.CSConceptSearchOperation
+    ShutdownOperation:
+      className: com.essaid.fhir.hapi.ext.provider.ShutdownOperation
 

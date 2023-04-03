@@ -1,0 +1,16 @@
+name: RestartHAPI
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  restart-hapi-dev:
+    name: restart-hapi-job
+    runs-on: ubuntu-22.04
+    steps:
+      - name: curl request
+        run: |
+          set -x
+          curl -v -X GET 'http://20.3.198.176:18080/fhir/$shutdown?exit-code=10&password=${{ secrets.HAPI_RESTART_PASSWORD }}&exit-delay=10'

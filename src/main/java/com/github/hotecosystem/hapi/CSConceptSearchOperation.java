@@ -1,7 +1,6 @@
 package com.github.hotecosystem.hapi;
 
 import ca.uhn.fhir.jpa.entity.TermConcept;
-import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Operation;
 import ca.uhn.fhir.rest.annotation.OperationParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
@@ -12,7 +11,6 @@ import org.hibernate.search.mapper.orm.session.SearchSession;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
 import org.hl7.fhir.r4.model.CodeSystem;
-import org.hl7.fhir.r4.model.IdType;
 import org.hl7.fhir.r4.model.Parameters;
 import org.hl7.fhir.r4.model.StringType;
 import org.springframework.stereotype.Component;
@@ -63,9 +61,9 @@ public class CSConceptSearchOperation implements IResourceProvider {
 
 
 //    @Operation(name = "concept-search", idempotent = true)
-//    public Parameters conceptSearch(@IdParam IdType id) {
-//        Parameters parameters = new Parameters();
-//        parameters.addParameter().setName("concept-search").setValue(new StringType("concept-value: " + id));
-//        return parameters;
-//    }
+////    public Parameters conceptSearch(@IdParam IdType id) {
+////        Parameters parameters = new Parameters();
+////        parameters.addParameter().setName("concept-search").setValue(new StringType("concept-value: " + id));
+////        return parameters;
+////    }
 }
