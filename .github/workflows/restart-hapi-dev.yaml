@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - dev
+    paths:
+      - 'src/main/**'
+      - 'pom.xml'
 
 jobs:
   restart-hapi-dev:
