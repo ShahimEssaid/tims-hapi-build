@@ -1,0 +1,13 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "example-1",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2023-04-20T14:46:05.415-07:00"
+  },
+  "url": "http://CodeSystem/example-1",
+  "concept": [ {
+    "code": "code-1",
+    "display": "Code One"
+  } ]
+}

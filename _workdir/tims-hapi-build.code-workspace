@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+    ],
+    "settings": {
+        "json.schemas": [
+            {
+                "fileMatch": [
+                    "/r4-examples/*.json"
+                ],
+                "url": "./schemas/r4-schema.json"
+            }
+        ]
+    }
+}

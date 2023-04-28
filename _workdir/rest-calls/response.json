@@ -1,0 +1,8 @@
+{
+  "resourceType": "OperationOutcome",
+  "issue": [ {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "HAPI-0418: Can not update resource, request URL must contain an ID element for update (PUT) operation (it must be of the form [base]/[resource type]/[id])"
+  } ]
+}

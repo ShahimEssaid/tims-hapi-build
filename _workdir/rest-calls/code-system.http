@@ -1,0 +1,8 @@
+PUT {{fhir-api}}/CodeSystem/example-1
+Content-Type: application/json+fhir
+
+< ../r4-examples/CodeSystem-example-1.json
+>> responses/response.json
+
+
+###

@@ -1,0 +1,37 @@
+{
+    "resourceType": "CodeSystem",
+    "id": "example-1",
+    "url": "http://CodeSystem/example-1",
+    "property": [
+        {
+            "code": "parent",
+            "uri": "parent"
+        }
+    ],
+    "concept": [
+        {
+            "code": "code-1",
+            "display": "Code One",
+            "concept": [
+                {
+                    "code": "code-2",
+                    "display": "Code Two"
+                }
+            ]
+        },
+        {
+            "code": "code-3",
+            "display": "Code Three",
+            "property": [
+                {
+                    "code": "parent",
+                    "valueCode": "code-1"
+                },
+                {
+                    "code": "parent",
+                    "valueCode": "code-2"
+                }
+            ]
+        }
+    ]
+}

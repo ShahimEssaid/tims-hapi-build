@@ -29,15 +29,16 @@
     </repositories>
 
     <dependencies>
+
         <dependency>
             <groupId>com.essaid.fhir.hapi</groupId>
-            <artifactId>hapi-fhir-jpaserver-starter-builds</artifactId>
+            <artifactId>hapi-fhir-jpaserver-starter-build</artifactId>
             <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.essaid.fhir.hapi</groupId>
-            <artifactId>hapi-fhir-jpaserver-starter-builds</artifactId>
+            <artifactId>hapi-fhir-jpaserver-starter-build</artifactId>
             <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
             <classifier>starter-overlay</classifier>
             <type>war</type>
@@ -86,7 +87,7 @@
                         <overlays>
                             <overlay>
                                 <groupId>com.essaid.fhir.hapi</groupId>
-                                <artifactId>hapi-fhir-jpaserver-starter-builds</artifactId>
+                                <artifactId>hapi-fhir-jpaserver-starter-build</artifactId>
                                 <classifier>starter-overlay</classifier>
                                 <type>war</type>
                             </overlay>

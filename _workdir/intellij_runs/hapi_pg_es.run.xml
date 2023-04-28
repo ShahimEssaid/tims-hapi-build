@@ -1,0 +1,24 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="hapi_pg_es" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="tims,hs-defaults,hs-elasticsearch,hs-postgresql" />
+    <envs>
+      <env name="HS_HAPI_API_URL" value="http://localhost:28080/fhir" />
+      <env name="HS_HAPI_DB_HOST" value="localhost" />
+      <env name="HS_HAPI_DB_NAME" value="postgres" />
+      <env name="HS_HAPI_DB_PASSWD" value="postgres" />
+      <env name="HS_HAPI_DB_PORT" value="25432" />
+      <env name="HS_HAPI_DB_USER" value="postgres" />
+      <env name="HS_HAPI_ES_HOST" value="localhost" />
+      <env name="HS_HAPI_ES_PASSWD" value="elastic" />
+      <env name="HS_HAPI_ES_PORT" value="29200" />
+      <env name="HS_HAPI_ES_USER" value="elastic" />
+      <env name="HS_HAPI_PORT" value="28080" />
+    </envs>
+    <module name="tims-hapi-build" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.hotecosystem.Main" />
+    <option name="WORKING_DIRECTORY" value="file://$ProjectFileDir$/_workdir/hapi_home" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
