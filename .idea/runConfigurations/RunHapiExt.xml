@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunHapiExt" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <option name="ACTIVE_PROFILES" value="test" />
+    <module name="hapi-extensions" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.essaid.fhir.hapi.ext.test.main.RunHapiExt" />
+    <option name="WORKING_DIRECTORY" value="file://$ModuleFileDir$" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.essaid.fhir.hapi.ext.main.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_Remove database and lucenefiles" />
+    </method>
+  </configuration>
+</component>

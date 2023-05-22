@@ -11,10 +11,11 @@ spring:
           backend:
             type: elasticsearch
             analysis:
-              configurer: ca.uhn.fhir.jpa.search.HapiHSearchAnalysisConfigurers$HapiElasticAnalysisConfigurer
+              configurer: com.essaid.fhir.hapi.ext.hold.HapiExtAnalysisConfigurer
 #            schema_management:
 #              settings_file: file:/hapi/config/es-index-settings.json
 #              mapping_file: file:/hapi/config/es-mapping-settings.json
+#  spring.jpa.properties.hibernate.search.backend.analysis.configurer
 
 elasticsearch:
 #  debug:

@@ -1,0 +1,9 @@
+# For project specific settings.
+spring:
+  jpa:
+    properties:
+      hibernate:
+        search:
+          backend:
+            analysis:
+              configurer: com.essaid.fhir.hapi.ext.hold.HapiExtAnalysisConfigurer

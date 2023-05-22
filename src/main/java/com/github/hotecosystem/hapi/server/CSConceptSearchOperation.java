@@ -1,4 +1,4 @@
-package com.github.hotecosystem.hapi;
+package com.github.hotecosystem.hapi.server;
 
 import ca.uhn.fhir.jpa.entity.TermConcept;
 import ca.uhn.fhir.rest.annotation.Operation;

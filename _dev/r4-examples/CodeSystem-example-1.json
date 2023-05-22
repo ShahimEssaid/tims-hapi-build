@@ -11,7 +11,16 @@
     "concept": [
         {
             "code": "code-1",
-            "display": "Code One",
+            "display": "Code One edited",
+            "designation": [
+                {
+                    "use": {
+                        "system": "http://acme.com/config/fhir/codesystems/internal",
+                        "code": "internal-label"
+                    },
+                    "value": "Code One designation 1"
+                }
+            ],
             "concept": [
                 {
                     "code": "code-2",

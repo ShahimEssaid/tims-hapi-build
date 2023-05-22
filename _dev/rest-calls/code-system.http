@@ -6,3 +6,6 @@ Content-Type: application/json+fhir
 
 
 ###
+POST {{fhir-api}}/$reindex-terminology
+
+###

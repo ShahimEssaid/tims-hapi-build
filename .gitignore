@@ -2,3 +2,4 @@ target/
 .idea.old*/
 overlays/
 *.jar
+/_dev/hapi_home/logs/start/*
