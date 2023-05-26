@@ -1,3 +1,4 @@
 /rest-calls/responses/
 /.venv
 /hapi-home/logs/
+/notes/

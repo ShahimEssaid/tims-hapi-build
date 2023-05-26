@@ -1,0 +1,649 @@
+2023-05-23 07:09:27.040 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2023-05-23 07:09:27.089 [main] INFO  org.hibernate.dialect.Dialect [Dialect.java:175] HHH000400: Using dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect
+2023-05-23 07:09:30.255 [main] INFO  o.h.s.m.o.b.i.HibernateSearchPreIntegrationService [HibernateSearchPreIntegrationService.java:89] HSEARCH000034: Hibernate Search version 6.1.6.Final
+2023-05-23 07:09:30.517 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:44] Server configured to allow contains searches
+2023-05-23 07:09:30.518 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:45] Server configured to deny multiple deletes
+2023-05-23 07:09:30.519 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:46] Server configured to deny external references
+2023-05-23 07:09:30.520 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:47] Server configured to enable DAO scheduling
+2023-05-23 07:09:30.521 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:48] Server configured to disable delete expunges
+2023-05-23 07:09:30.522 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:49] Server configured to enable expunges
+2023-05-23 07:09:30.523 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:50] Server configured to allow overriding default search params
+2023-05-23 07:09:30.524 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:51] Server configured to disable auto-creating placeholder references
+2023-05-23 07:09:30.607 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:102] Server configured to have a maximum fetch size of 'unlimited'
+2023-05-23 07:09:30.608 [main] INFO  c.u.f.j.s.c.FhirServerConfigCommon [FhirServerConfigCommon.java:106] Server configured to cache search results for 60000 milliseconds
+2023-05-23 07:09:36.646 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-23 07:10:11.324 [main] WARN  o.h.s.b.e.c.i.ElasticsearchClientFactoryImpl [ElasticsearchClientFactoryImpl.java:248] HSEARCH400073: Hibernate Search will connect to Elasticsearch with authentication over plain HTTP (not HTTPS). The password will be sent in clear text over the network.
+2023-05-23 07:10:12.243 [Hibernate Search - default backend - Transport thread - 2] ERROR o.h.s.e.r.spi.RootFailureCollector [RootFailureCollector.java:231] HSEARCH000521: Hibernate Search encountered a failure during bootstrap; continuing for now to list all problems, but the process will ultimately be aborted.
+
+Context: Hibernate ORM mapping, type 'ca.uhn.fhir.jpa.entity.TermConcept'
+Failure:
+org.hibernate.search.util.common.SearchException: HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+Request: PUT /termconcept-000001 with parameters {}
+Response: 400 'Bad Request' from 'http://localhost:19200' with body
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "mapper_parsing_exception",
+        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+      }
+    ],
+    "type": "mapper_parsing_exception",
+    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+    "caused_by": {
+      "type": "illegal_argument_exception",
+      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+    }
+  },
+  "status": 400
+}
+
+	at org.hibernate.search.backend.elasticsearch.work.impl.AbstractNonBulkableWork.handleResult(AbstractNonBulkableWork.java:84)
+	at org.hibernate.search.backend.elasticsearch.work.impl.AbstractNonBulkableWork.lambda$execute$3(AbstractNonBulkableWork.java:66)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at org.hibernate.search.backend.elasticsearch.client.impl.ElasticsearchClientImpl$1.onFailure(ElasticsearchClientImpl.java:127)
+	at org.elasticsearch.client.RestClient$FailureTrackingResponseListener.onDefinitiveFailure(RestClient.java:672)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:408)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:392)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.client.InternalRequestExecutor.inputReady(InternalRequestExecutor.java:83)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.search.util.common.SearchException: HSEARCH400090: Elasticsearch response indicates a failure.
+	at org.hibernate.search.backend.elasticsearch.work.impl.DefaultElasticsearchRequestSuccessAssessor.checkSuccess(DefaultElasticsearchRequestSuccessAssessor.java:103)
+	at org.hibernate.search.backend.elasticsearch.work.impl.DefaultElasticsearchRequestSuccessAssessor.checkSuccess(DefaultElasticsearchRequestSuccessAssessor.java:86)
+	at org.hibernate.search.backend.elasticsearch.work.impl.AbstractNonBulkableWork.handleResult(AbstractNonBulkableWork.java:79)
+	... 24 common frames omitted
+2023-05-23 07:10:12.259 [Hibernate Search - default backend - Transport thread - 1] WARN  org.elasticsearch.client.RestClient [RequestLogger.java:72] request [PUT http://localhost:19200/resourcetable-000001] returned 7 warnings: [299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [sp.string-norm] has invalid content [{\"path_match\":\"sp.*.string.norm\",\"mapping\":{\"analyzer\":\"normStringAnalyzer\",\"index\":true,\"norms\":true,\"term_vector\":\"no\",\"type\":\"text\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [analyzer [normStringAnalyzer] has not been configured in mappings]"],[299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [sp.string-exact] has invalid content [{\"path_match\":\"sp.*.string.exact\",\"mapping\":{\"analyzer\":\"exactAnalyzer\",\"index\":true,\"norms\":true,\"term_vector\":\"no\",\"type\":\"text\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [analyzer [exactAnalyzer] has not been configured in mappings]"],[299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [sp.string-text] has invalid content [{\"path_match\":\"sp.*.string.text\",\"mapping\":{\"analyzer\":\"standardAnalyzer\",\"index\":true,\"norms\":true,\"term_vector\":\"no\",\"type\":\"text\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [analyzer [standardAnalyzer] has not been configured in mappings]"],[299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [sp.string-lower] has invalid content [{\"path_match\":\"sp.*.string.lower\",\"mapping\":{\"doc_values\":true,\"index\":true,\"normalizer\":\"lowercaseAsciifoldingNormalizer\",\"norms\":false,\"type\":\"keyword\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [normalizer [lowercaseAsciifoldingNormalizer] not found for field [__dynamic__sp.string-lower]]"],[299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [nsp.string-norm] has invalid content [{\"path_match\":\"nsp.*.string.norm\",\"mapping\":{\"analyzer\":\"normStringAnalyzer\",\"index\":true,\"norms\":true,\"term_vector\":\"no\",\"type\":\"text\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [analyzer [normStringAnalyzer] has not been configured in mappings]"],[299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [nsp.string-text] has invalid content [{\"path_match\":\"nsp.*.string.text\",\"mapping\":{\"analyzer\":\"standardAnalyzer\",\"index\":true,\"norms\":true,\"term_vector\":\"no\",\"type\":\"text\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [analyzer [standardAnalyzer] has not been configured in mappings]"],[299 Elasticsearch-7.16.3-4e6e4eab2297e949ec994e688dad46290d018022 "dynamic template [SearchParamText] has invalid content [{\"path_match\":\"text-*\",\"mapping\":{\"analyzer\":\"standardAnalyzer\",\"index\":true,\"norms\":true,\"term_vector\":\"no\",\"type\":\"text\"}}], attempted to validate it with the following match_mapping_type: [object, string, long, double, boolean, date, binary], caused by [analyzer [standardAnalyzer] has not been configured in mappings]"]
+2023-05-23 07:10:12.264 [Hibernate Search - default backend - Transport thread - 1] ERROR o.h.s.e.r.spi.RootFailureCollector [RootFailureCollector.java:231] HSEARCH000521: Hibernate Search encountered a failure during bootstrap; continuing for now to list all problems, but the process will ultimately be aborted.
+Context: Hibernate ORM mapping, type 'ca.uhn.fhir.jpa.model.entity.ResourceTable'
+Failure:
+org.hibernate.search.util.common.SearchException: HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+Request: PUT /resourcetable-000001 with parameters {}
+Response: 400 'Bad Request' from 'http://localhost:19200' with body
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "mapper_parsing_exception",
+        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+      }
+    ],
+    "type": "mapper_parsing_exception",
+    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+    "caused_by": {
+      "type": "illegal_argument_exception",
+      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+    }
+  },
+  "status": 400
+}
+
+	at org.hibernate.search.backend.elasticsearch.work.impl.AbstractNonBulkableWork.handleResult(AbstractNonBulkableWork.java:84)
+	at org.hibernate.search.backend.elasticsearch.work.impl.AbstractNonBulkableWork.lambda$execute$3(AbstractNonBulkableWork.java:66)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at org.hibernate.search.backend.elasticsearch.client.impl.ElasticsearchClientImpl$1.onFailure(ElasticsearchClientImpl.java:127)
+	at org.elasticsearch.client.RestClient$FailureTrackingResponseListener.onDefinitiveFailure(RestClient.java:672)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:408)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:392)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.client.InternalRequestExecutor.inputReady(InternalRequestExecutor.java:83)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.search.util.common.SearchException: HSEARCH400090: Elasticsearch response indicates a failure.
+	at org.hibernate.search.backend.elasticsearch.work.impl.DefaultElasticsearchRequestSuccessAssessor.checkSuccess(DefaultElasticsearchRequestSuccessAssessor.java:103)
+	at org.hibernate.search.backend.elasticsearch.work.impl.DefaultElasticsearchRequestSuccessAssessor.checkSuccess(DefaultElasticsearchRequestSuccessAssessor.java:86)
+	at org.hibernate.search.backend.elasticsearch.work.impl.AbstractNonBulkableWork.handleResult(AbstractNonBulkableWork.java:79)
+	... 24 common frames omitted
+2023-05-23 07:10:12.305 [main] ERROR c.u.f.j.c.HapiFhirLocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:426] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+2023-05-23 07:10:12.309 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter [TomcatStarter.java:61] Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'hapiServletRegistration' defined in ca.uhn.fhir.jpa.starter.Application: Unsatisfied dependency expressed through method 'hapiServletRegistration' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'restfulServer' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Unsatisfied dependency expressed through method 'restfulServer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mySystemDaoR4': Injection of persistence dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+2023-05-23 07:10:12.351 [main] INFO  o.a.catalina.core.StandardService [DirectJDKLog.java:173] Stopping service [Tomcat]
+2023-05-23 07:10:12.356 [main] WARN  o.a.c.loader.WebappClassLoaderBase [DirectJDKLog.java:173] The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+2023-05-23 07:10:12.359 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:591] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2023-05-23 07:10:12.359 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2023-05-23 07:10:12.369 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2023-05-23 07:10:12.475 [main] ERROR o.s.boot.SpringApplication [SpringApplication.java:824] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at com.github.hotecosystem.hapi.Main.main(Main.java:20)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 6 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hapiServletRegistration' defined in ca.uhn.fhir.jpa.starter.Application: Unsatisfied dependency expressed through method 'hapiServletRegistration' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'restfulServer' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Unsatisfied dependency expressed through method 'restfulServer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mySystemDaoR4': Injection of persistence dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5220)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:265)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 11 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'restfulServer' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Unsatisfied dependency expressed through method 'restfulServer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mySystemDaoR4': Injection of persistence dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mySystemDaoR4': Injection of persistence dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessProperties(PersistenceAnnotationBeanPostProcessor.java:351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 67 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.essaid.fhir.hapi.ext.HapiExtensionConfiguration: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:233)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1284)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1245)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1213)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findDefaultEntityManagerFactory(PersistenceAnnotationBeanPostProcessor.java:565)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findEntityManagerFactory(PersistenceAnnotationBeanPostProcessor.java:528)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor$PersistenceElement.resolveEntityManager(PersistenceAnnotationBeanPostProcessor.java:696)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor$PersistenceElement.getResourceToInject(PersistenceAnnotationBeanPostProcessor.java:669)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessProperties(PersistenceAnnotationBeanPostProcessor.java:348)
+	... 79 common frames omitted
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: HAPI_PU] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 95 common frames omitted
+Caused by: org.hibernate.search.util.common.SearchException: HSEARCH000520: Hibernate Search encountered failures during bootstrap. Failures:
+
+    Hibernate ORM mapping:
+        type 'ca.uhn.fhir.jpa.entity.TermConcept':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /termconcept-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [exactAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [exactAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+        type 'ca.uhn.fhir.jpa.model.entity.ResourceTable':
+            failures:
+              - HSEARCH400007: Elasticsearch request failed: HSEARCH400090: Elasticsearch response indicates a failure.
+                Request: PUT /resourcetable-000001 with parameters {}
+                Response: 400 'Bad Request' from 'http://localhost:19200' with body
+                {
+                  "error": {
+                    "root_cause": [
+                      {
+                        "type": "mapper_parsing_exception",
+                        "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings"
+                      }
+                    ],
+                    "type": "mapper_parsing_exception",
+                    "reason": "Failed to parse mapping [_doc]: analyzer [standardAnalyzer] has not been configured in mappings",
+                    "caused_by": {
+                      "type": "illegal_argument_exception",
+                      "reason": "analyzer [standardAnalyzer] has not been configured in mappings"
+                    }
+                  },
+                  "status": 400
+                }
+	at org.hibernate.search.engine.reporting.spi.RootFailureCollector.checkNoFailure(RootFailureCollector.java:53)
+	at org.hibernate.search.engine.common.impl.SearchIntegrationPartialBuildStateImpl$SearchIntegrationFinalizerImpl.finalizeIntegration(SearchIntegrationPartialBuildStateImpl.java:214)
+	at org.hibernate.search.mapper.orm.bootstrap.impl.HibernateOrmIntegrationPartialBuildState.doBootSecondPhase(HibernateOrmIntegrationPartialBuildState.java:75)
+	at org.hibernate.search.mapper.orm.bootstrap.impl.HibernateOrmIntegrationBooterImpl.bootNow(HibernateOrmIntegrationBooterImpl.java:176)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at org.hibernate.search.mapper.orm.bootstrap.impl.HibernateSearchSessionFactoryObserver.sessionFactoryCreated(HibernateSearchSessionFactoryObserver.java:41)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:402)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:141)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 99 common frames omitted
+Disconnected from the target VM, address: '127.0.0.1:51611', transport: 'socket'
+
+Process finished with exit code 1

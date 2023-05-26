@@ -1,11 +1,51 @@
-PUT {{fhir-api}}/CodeSystem/example-1
+### Update the CS example
+PUT {{fhirapi}}/CodeSystem/example-1
 Content-Type: application/json+fhir
 
 < ../r4-examples/CodeSystem-example-1.json
 >> responses/response.json
 
 
-###
-POST {{fhir-api}}/$reindex-terminology
+###  Reindex HAPI
+POST {{fhirapi}}/$reindex-terminology
 
 ###
+
+# curl -XGET "http://elasticsearch:9200/termconcept-000001/_search" -H 'Content-Type: application/json' -d'
+#{
+#  "query": {"match_all": {}}
+#}'
+
+
+###
+GET http://localhost:19200/termconcept-000001/_doc/
+Authorization: Basic elastic elastic
+
+###
+GET http://localhost:19200/termconcept-000001/_search
+Authorization: Basic elastic elastic
+
+###
+POST {{fhirapi}}/$reindex-terminology
+Authorization: Basic elastic elastic
+
+
+# ES
+#
+
+### Index information
+GET http://localhost:19200/termconcept-000001
+Authorization: Basic elastic elastic
+
+### Search the index
+GET http://localhost:19200/termconcept-000001/_search
+Content-Type: application/json
+Authorization: Basic elastic elastic
+
+{
+  "query": {"match_all": {}}
+}
+
+### Vectors
+GET http://localhost:19200/termconcept-000001/_termvectors/1?fields=*
+Authorization: Basic elastic elastic

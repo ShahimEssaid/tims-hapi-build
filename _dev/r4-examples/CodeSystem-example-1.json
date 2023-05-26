@@ -2,6 +2,7 @@
     "resourceType": "CodeSystem",
     "id": "example-1",
     "url": "http://CodeSystem/example-1",
+    "version": "version-1",
     "property": [
         {
             "code": "parent",
@@ -11,34 +12,35 @@
     "concept": [
         {
             "code": "code-1",
-            "display": "Code One edited",
+            "display": "Code one display",
+            "definition": "Code one definition",
+            "property": [
+                {
+                    "code": "prop-code-1",
+                    "valueString": "Prop value"
+                }
+            ],
             "designation": [
                 {
                     "use": {
-                        "system": "http://acme.com/config/fhir/codesystems/internal",
-                        "code": "internal-label"
+                        "system": "http://use",
+                        "code": "use-one"
                     },
-                    "value": "Code One designation 1"
-                }
-            ],
-            "concept": [
-                {
-                    "code": "code-2",
-                    "display": "Code Two"
-                }
-            ]
-        },
-        {
-            "code": "code-3",
-            "display": "Code Three",
-            "property": [
-                {
-                    "code": "parent",
-                    "valueCode": "code-1"
+                    "value": "Use one value"
                 },
                 {
-                    "code": "parent",
-                    "valueCode": "code-2"
+                    "use": {
+                        "system": "http://use",
+                        "code": "use-one"
+                    },
+                    "value": "Use one another value"
+                },
+                {
+                    "use": {
+                        "system": "http://use",
+                        "code": "use-two"
+                    },
+                    "value": "Use two value"
                 }
             ]
         }

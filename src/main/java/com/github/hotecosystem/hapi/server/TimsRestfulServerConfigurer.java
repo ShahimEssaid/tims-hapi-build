@@ -4,6 +4,7 @@ import ca.uhn.fhir.rest.server.RestfulServer;
 import com.essaid.fhir.hapi.ext.HapiExtensionProperties;
 import com.essaid.fhir.hapi.ext.server.IRestfulServerConfigurer;
 import com.essaid.fhir.hapi.ext.server.provider.ShutdownOperation;
+import com.github.hotecosystem.hapi.server.provider.CSConceptTextSearchOperation;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ public class TimsRestfulServerConfigurer implements IRestfulServerConfigurer {
 
     @Override
     public void configure(RestfulServer server) {
-        server.registerProvider(applicationContext.getBean(CSConceptSearchOperation.class));
+        server.registerProvider(applicationContext.getBean(CSConceptTextSearchOperation.class));
         server.registerProvider(applicationContext.getBean(ShutdownOperation.class));
     }
 }

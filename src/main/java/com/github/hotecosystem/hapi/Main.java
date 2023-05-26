@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Import;
 
-@SpringBootApplication(scanBasePackageClasses = {TimsRestfulServerConfigurer.class, NullIndexAnalysisConfigurer.class})
+@SpringBootApplication()
 @Import({Application.class, HapiExtensionConfiguration.class, ShutdownOperation.class, HapiExitManager.class})
 public class Main {
 

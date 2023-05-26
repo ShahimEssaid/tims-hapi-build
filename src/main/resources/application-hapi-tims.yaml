@@ -5,13 +5,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-com.essaid.fhir.hapi.extensions:
-  providers:
-    CSConceptSearchOperation:
-      className: com.github.hotecosystem.hapi.server.CSConceptSearchOperation
-    ShutdownOperation:
-      className: com.essaid.fhir.hapi.ext.server.provider.ShutdownOperation
-
 tims: {}
 
 
@@ -23,6 +16,23 @@ com:
           enabled: true
           type: map # map to use the mapping configuration, or 'context' (the default) to look up all implementations in the context
           map:
-            timesConfigurer: class:com.github.hotecosystem.hapi.server.TimsRestfulServerConfigurer
-
-
+            timesServerConfigurer: class:com.github.hotecosystem.hapi.server.TimsRestfulServerConfigurer
+      index:
+        analysis:
+          apply-defaults: true
+          configurers:
+            enabled: true
+            type: map # map to use the mapping configuration, or 'context' (the default) to look up all implementations in the context
+            map: {}
+        mapping:
+          configurers:
+            enabled: true
+            type: map # map to use the mapping configuration, or 'context' (the default) to look up all implementations in the context
+            map:
+              timsIndexMappingConfigurer: class:com.github.hotecosystem.hapi.index.TimsMappingConfigurer
+      entity-manager-factory:
+        process-properties: true
+        default-properties: {}
+        override-properties:
+          "hibernate.search.backend.analysis.configurer": class:com.essaid.fhir.hapi.ext.HapiExtensionConfiguration
+          "hibernate.search.mapping.configurer": class:com.essaid.fhir.hapi.ext.HapiExtensionConfiguration
