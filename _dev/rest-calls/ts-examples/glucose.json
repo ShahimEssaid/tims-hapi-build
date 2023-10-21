@@ -1,0 +1,550 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP28920-4"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose CSF/Glucose plas"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose CSF/Glucose plas useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306099-5"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306111-8"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^pre dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^pre dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP32534-7"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP14635-4"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://purl.obolibrary.org/obo/hp.owl"
+        },
+        {
+          "name": "code",
+          "valueString": "CHEBI:17234"
+        },
+        {
+          "name": "display",
+          "valueString": "glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose useSystem:oio useCode:hasExactSynonym useDisplay:has exact synonym language:null"
+        },
+        {
+          "name": "designation",
+          "valueString": "gluco-hexose useSystem:oio useCode:hasExactSynonym useDisplay:has exact synonym language:null"
+        },
+        {
+          "name": "designation",
+          "valueString": "glucose useSystem:oio useCode:hasExactSynonym useDisplay:has exact synonym language:null"
+        },
+        {
+          "name": "designation",
+          "valueString": "DL-glucose useSystem:oio useCode:hasRelatedSynonym useDisplay:has related synonym language:null"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glc useSystem:oio useCode:hasRelatedSynonym useDisplay:has related synonym language:null"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glukose useSystem:oio useCode:hasRelatedSynonym useDisplay:has related synonym language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306041-7"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^5.5H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^5.5H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306014-4"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^40M post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^40M post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306010-2"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^4.5H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^4.5H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306048-2"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^5H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^5H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306022-7"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^45M post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^45M post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306031-8"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^4H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^4H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305924-5"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^20M post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^20M post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305907-0"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^2.3H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^2.3H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305821-3"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^1.6H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^1.6H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305960-9"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^3.3H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^3.3H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305832-0"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^10M post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^10M post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305995-5"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^3H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^3H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306064-9"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^6H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^6H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305913-8"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^2.5H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^2.5H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305947-6"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^2H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^2H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305805-6"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^1.3H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^1.3H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP306074-8"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^75M post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^75M post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305918-7"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^2.6H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^2.6H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "system",
+          "valueString": "http://loinc.org"
+        },
+        {
+          "name": "code",
+          "valueString": "LP305963-3"
+        },
+        {
+          "name": "display",
+          "valueString": "Glucose^3.5H post dose glucose"
+        },
+        {
+          "name": "designation",
+          "valueString": "Glucose^3.5H post dose glucose useSystem:null useCode:null useDisplay:PartDisplayName language:null"
+        }
+      ]
+    }
+  ]
+}

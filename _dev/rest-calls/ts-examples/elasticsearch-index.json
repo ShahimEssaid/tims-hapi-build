@@ -1,0 +1,495 @@
+{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 10000,
+      "relation": "gte"
+    },
+    "max_score": 3.2956398,
+    "hits": [
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201740",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:132943",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "aspartate",
+          "myDisplayEdgeNGram": "aspartate",
+          "myDisplayWordEdgeNGram": "aspartate",
+          "myDisplayNGram": "aspartate",
+          "myDisplayPhonetic": "aspartate",
+          "myId": 201740,
+          "myParentPids": "NONE",
+          "P:parent": [
+            "CHEBI:33558",
+            "CHEBI:35693"
+          ],
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:22660",
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201743",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:132961",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "methylsuccinate",
+          "myDisplayEdgeNGram": "methylsuccinate",
+          "myDisplayWordEdgeNGram": "methylsuccinate",
+          "myDisplayNGram": "methylsuccinate",
+          "myDisplayPhonetic": "methylsuccinate",
+          "myId": 201743,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:35693",
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:91315",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "2-methylbutanedioic acid anion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "2-methylbutanedioic acid anions"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "methylsuccinate anion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "methylsuccinates"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "methylsuccinic acid anion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "methylsuccinic acid anions"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201717",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:12109",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "5-aminolevulinate",
+          "myDisplayEdgeNGram": "5-aminolevulinate",
+          "myDisplayWordEdgeNGram": "5-aminolevulinate",
+          "myDisplayNGram": "5-aminolevulinate",
+          "myDisplayPhonetic": "5-aminolevulinate",
+          "myId": 201717,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:35757",
+          "P:http://purl_obolibrary_org/obo/chebi#has_functional_parent": "CHEBI:39150",
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:17549",
+          "designations": {
+            "myLanguage": null,
+            "myUseSystem": "oio",
+            "myUseCode": "hasExactSynonym",
+            "myUseDisplay": "has exact synonym",
+            "myValue": "5-amino-4-oxopentanoate"
+          },
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201752",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:133610",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "N-isobutyrylglycinate",
+          "myDisplayEdgeNGram": "N-isobutyrylglycinate",
+          "myDisplayWordEdgeNGram": "N-isobutyrylglycinate",
+          "myDisplayNGram": "N-isobutyrylglycinate",
+          "myDisplayPhonetic": "N-isobutyrylglycinate",
+          "myId": 201752,
+          "myParentPids": "NONE",
+          "P:parent": [
+            "CHEBI:35757",
+            "CHEBI:57670"
+          ],
+          "P:http://purl_obolibrary_org/obo/RO_0000087": "CHEBI:84087",
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:70979",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasExactSynonym",
+              "myUseDisplay": "has exact synonym",
+              "myValue": "(2-methylpropanamido)acetate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "N-(2-methylpropanoyl)glycinate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "N-isobutanoylglycinate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "isobutanoylglycinate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "isobutyrylglycinate"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201761",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:136889",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "5beta steroid",
+          "myDisplayEdgeNGram": "5beta steroid",
+          "myDisplayWordEdgeNGram": "5beta steroid",
+          "myDisplayNGram": "5beta steroid",
+          "myDisplayPhonetic": "5beta steroid",
+          "myId": 201761,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:35341",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "5beta steroids"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "5beta-steroid"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "5beta-steroids"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201770",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:13941",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "carbamate",
+          "myDisplayEdgeNGram": "carbamate",
+          "myDisplayWordEdgeNGram": "carbamate",
+          "myDisplayNGram": "carbamate",
+          "myDisplayPhonetic": "carbamate",
+          "myId": 201770,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:37022",
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:28616",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasExactSynonym",
+              "myUseDisplay": "has exact synonym",
+              "myValue": "carbamate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasExactSynonym",
+              "myUseDisplay": "has exact synonym",
+              "myValue": "carbamate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "Carbamat"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "Karbamat"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "carbamate ion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "carbamic acid, ion(1-)"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201768",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:13850",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "apoprotein",
+          "myDisplayEdgeNGram": "apoprotein",
+          "myDisplayWordEdgeNGram": "apoprotein",
+          "myDisplayNGram": "apoprotein",
+          "myDisplayPhonetic": "apoprotein",
+          "myId": 201768,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:38560",
+          "P:http://purl_obolibrary_org/obo/RO_0000087": "CHEBI:75771",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasExactSynonym",
+              "myUseDisplay": "has exact synonym",
+              "myValue": "apoprotein"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "apoproteins"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201726",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:131621",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "C19-steroid",
+          "myDisplayEdgeNGram": "C19-steroid",
+          "myDisplayWordEdgeNGram": "C19-steroid",
+          "myDisplayNGram": "C19-steroid",
+          "myDisplayPhonetic": "C19-steroid",
+          "myId": 201726,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:35341",
+          "P:http://purl_obolibrary_org/obo/chebi#has_parent_hydride": "CHEBI:35509",
+          "designations": {
+            "myLanguage": null,
+            "myUseSystem": "oio",
+            "myUseCode": "hasRelatedSynonym",
+            "myUseDisplay": "has related synonym",
+            "myValue": "C19-steroids"
+          },
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201742",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:132954",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "sebacate",
+          "myDisplayEdgeNGram": "sebacate",
+          "myDisplayWordEdgeNGram": "sebacate",
+          "myDisplayNGram": "sebacate",
+          "myDisplayPhonetic": "sebacate",
+          "myId": 201742,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:35693",
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:41865",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "decanedioic acid anion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "decanedioic acid anions"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "sebacate anion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "sebacate anions"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "sebacates"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "sebacic acid anion"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "sebacic acid anions"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      },
+      {
+        "_index": "termconcept-000001",
+        "_type": "_doc",
+        "_id": "201753",
+        "_score": 3.2956398,
+        "_source": {
+          "csUrl": "http://purl.obolibrary.org/obo/hp.owl",
+          "csVersion": null,
+          "myCode": "CHEBI:133744",
+          "myCodeSystemVersionPid": 6,
+          "myDisplay": "homovanillate",
+          "myDisplayEdgeNGram": "homovanillate",
+          "myDisplayWordEdgeNGram": "homovanillate",
+          "myDisplayNGram": "homovanillate",
+          "myDisplayPhonetic": "homovanillate",
+          "myId": 201753,
+          "myParentPids": "NONE",
+          "P:parent": "CHEBI:36059",
+          "P:http://purl_obolibrary_org/obo/RO_0000087": [
+            "CHEBI:75771",
+            "CHEBI:77746"
+          ],
+          "P:http://purl_obolibrary_org/obo/chebi#is_conjugate_base_of": "CHEBI:545959",
+          "designations": [
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasExactSynonym",
+              "myUseDisplay": "has exact synonym",
+              "myValue": "(4-hydroxy-3-methoxyphenyl)acetate"
+            },
+            {
+              "myLanguage": null,
+              "myUseSystem": "oio",
+              "myUseCode": "hasRelatedSynonym",
+              "myUseDisplay": "has related synonym",
+              "myValue": "3-methoxy-4-hydroxyphenylacetate"
+            }
+          ],
+          "_entity_type": "TermConcept"
+        }
+      }
+    ]
+  }
+}

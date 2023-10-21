@@ -15,7 +15,7 @@
       <env name="HS_HAPI_PORT" value="18080" />
     </envs>
     <module name="tims-hapi-build" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.hotecosystem.hapi.Main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.hotecosystem.hapi.TimsServer" />
     <option name="VM_PARAMETERS" value="-Xmx4G -Dlogging.config=./config/logback-spring.xml" />
     <option name="WORKING_DIRECTORY" value="file://$ProjectFileDir$/_dev/hapi-home" />
     <method v="2">

@@ -1,0 +1,2 @@
+com.essaid.fhir.hapiext.jpa.JpaAutoConfiguration
+com.essaid.fhir.hapiext.server.ServerAutoConfiguration

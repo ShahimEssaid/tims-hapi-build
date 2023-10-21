@@ -1,0 +1,60 @@
+server:
+  shutdown: graceful
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+tims: {}
+
+hapiext:
+  server:
+    configurers:
+      type: context # Set to "map" to use the mapping configuration below, or "context" (the default) to look up all implementations in the context
+      sort: false
+      # The implementations of: com.essaid.fhir.hapi.ext.server.IRestfulServerConfigurer
+      map:
+        timesServerConfigurer: bean:com.github.hotecosystem.hapi.server.TimsServerConfigurer
+        # Examples
+      # someKey: class:some.full.class.Name  (notice the "class:" prefix). This will load the class from the spring context
+      # someOtherKey: bean:someBeanName  (notice the "bean:" prefix). This will load the named bean from the spring context
+  index:
+    lucene-analysis:
+      apply-default: true
+      configurers:
+        type: context # Above comments apply here as well.
+        sort: false
+        # The implementations of:
+        # org.hibernate.search.backend.lucene.analysis.LuceneAnalysisConfigurer
+        # org.hibernate.search.backend.elasticsearch.analysis.ElasticsearchAnalysisConfigurer
+        # You need to enable the appropriate ones in your context based on your indexing backend.
+        # Or use the "map" mode to control by configuration
+        map: {} # Above comments apply here as well.
+    elasticsearch-analysis:
+      apply-default: true
+      configurers:
+        type: context # Above comments apply here as well.
+        sort: false
+        # The implementations of:
+        # org.hibernate.search.backend.lucene.analysis.LuceneAnalysisConfigurer
+        # org.hibernate.search.backend.elasticsearch.analysis.ElasticsearchAnalysisConfigurer
+        # You need to enable the appropriate ones in your context based on your indexing backend.
+        # Or use the "map" mode to control by configuration
+        map: { } # Above comments apply here as well.
+    mapping:
+      configurers:
+        type: context # map to use the mapping configuration, or 'context' (the default) to look up all implementations in the context
+        sort: false
+        # The implementations of
+        # org.hibernate.search.mapper.orm.mapping.HibernateOrmSearchMappingConfigurer
+        map:
+          timsIndexMappingConfigurer: bean:com.github.hotecosystem.hapi.index.TimsMappingConfigurer
+  jpa:
+    enable: true
+    log-level: info
+    process-properties: true
+    override-properties:
+      # Do not change this unless you understand how the extension mechanism works.
+      # You can override other properties if needed but these two are key to the extension functionality
+      "hibernate.search.backend.analysis.configurer": bean:com.essaid.fhir.hapiext.index.DelegatingLuceneAnalysisConfigurer
+      "hibernate.search.mapping.configurer": bean:com.essaid.fhir.hapiext.index.DelegatingSearchMappingConfigurer

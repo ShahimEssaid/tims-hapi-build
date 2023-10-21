@@ -1,0 +1,44 @@
+GET {{fhir}}/metadata
+
+###
+GET {{fhir}}/CodeSystem/$text-search?
+    search-string={{text}}
+
+>>! ts-examples/{{text}}.json
+
+###
+GET {{fhir}}/CodeSystem/$text-search?
+    search-string={{text}}&
+    fetch-size=500
+
+>>! ts-examples/{{text}}-500.json
+
+###
+GET {{fhir}}/CodeSystem/$text-search?
+    search-string={{text}}&
+    fetch-size=500&
+    except-system=http://loinc.org
+
+>>! ts-examples/{{text}}-500-except-loinc.json
+
+###
+GET {{fhir}}/CodeSystem/$text-search?
+    search-string={{text}}&
+    fetch-size=500&
+    prefer-system=http://purl.obolibrary.org/obo/hp.owl
+
+>>! ts-examples/{{text}}-500-prefer-hp.json
+
+
+### Search the Elasticsearch index
+GET http://localhost:19200/termconcept-read/_search
+Content-Type: application/json
+Authorization: Basic elastic elastic
+
+{
+  "query": {"match": {
+    "csUrl": "http://purl.obolibrary.org/obo/hp.owl"
+  }}
+}
+
+>>! ts-examples/elasticsearch-index.json

@@ -44,6 +44,7 @@ Authorization: Basic elastic elastic
 
 {
   "query": {"match_all": {}}
+
 }
 
 ### Vectors
