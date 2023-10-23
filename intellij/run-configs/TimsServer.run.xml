@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TimsServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <option name="ACTIVE_PROFILES" value="tims,timsdev" />
+    <module name="tims-hapi-build" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.hotecosystem.hapi.TimsServer" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

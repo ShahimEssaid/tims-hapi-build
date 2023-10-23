@@ -5,19 +5,25 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-tims: {}
+tims: { }
 
 hapiext:
   server:
+    enabled: true
     configurers:
-      type: context # Set to "map" to use the mapping configuration below, or "context" (the default) to look up all implementations in the context
+      type: map # Set to "map" to use the mapping configuration below, or "context" (the default) to look up all implementations in the context
       sort: false
       # The implementations of: com.essaid.fhir.hapi.ext.server.IRestfulServerConfigurer
       map:
-        timesServerConfigurer: bean:com.github.hotecosystem.hapi.server.TimsServerConfigurer
+        default: bean-type:com.essaid.fhir.hapiext.server.DefaultServerConfigurer
         # Examples
       # someKey: class:some.full.class.Name  (notice the "class:" prefix). This will load the class from the spring context
       # someOtherKey: bean:someBeanName  (notice the "bean:" prefix). This will load the named bean from the spring context
+    interceptors:
+      request-security: bean-type:com.essaid.fhir.hapiext.security.AccessControlInterceptor
+    providers:
+      text-search: bean-type:com.github.hotecosystem.hapi.server.provider.CSConceptTextSearchOperation
+      shutdown: bean-type:com.essaid.fhir.hapiext.server.provider.ShutdownOperation
   index:
     lucene-analysis:
       apply-default: true
@@ -29,7 +35,7 @@ hapiext:
         # org.hibernate.search.backend.elasticsearch.analysis.ElasticsearchAnalysisConfigurer
         # You need to enable the appropriate ones in your context based on your indexing backend.
         # Or use the "map" mode to control by configuration
-        map: {} # Above comments apply here as well.
+        map: { } # Above comments apply here as well.
     elasticsearch-analysis:
       apply-default: true
       configurers:
@@ -48,9 +54,9 @@ hapiext:
         # The implementations of
         # org.hibernate.search.mapper.orm.mapping.HibernateOrmSearchMappingConfigurer
         map:
-          timsIndexMappingConfigurer: bean:com.github.hotecosystem.hapi.index.TimsMappingConfigurer
+          tims: bean-type:com.github.hotecosystem.hapi.index.TimsMappingConfigurer
   jpa:
-    enable: true
+    enabled: true
     log-level: info
     process-properties: true
     override-properties:
@@ -58,3 +64,31 @@ hapiext:
       # You can override other properties if needed but these two are key to the extension functionality
       "hibernate.search.backend.analysis.configurer": bean:com.essaid.fhir.hapiext.index.DelegatingLuceneAnalysisConfigurer
       "hibernate.search.mapping.configurer": bean:com.essaid.fhir.hapiext.index.DelegatingSearchMappingConfigurer
+
+  security:
+    # allowed request types are: CONNECT,DELETE,GET,OPTIONS,PATCH,POST,PUT,TRACE,TRACK,HEAD
+    enabled: true
+    users:
+      # anonymous does not need a password. Only allowed/rejected permissions
+      anonymous:
+        hash:
+        allow: false
+        permissions:
+          # Regex patterns to match. Checked in order
+          # A match will cause the request to be accepted if true, rejected if false.
+          # If there is no match, reject by default
+          "[RT:GET,.*]": true
+          "[.*]": false
+
+          # examples
+          # GET /metatdata -> "[RT:GET,ROT:METADATA,PATH:metadata]"
+          # POST /CodeSystem -> "[RT:POST,ROT:CREATE,PATH:CodeSystem]"
+      user:
+        hash: $2a$10$j7Ijhth7/OFlOJ.ZULQXCuspF8qx6ak8kceUlsUGWHZRuhDGg06.q  # password
+        allow: false
+        permissions:
+          # Regex patterns to match. Checked in order
+          # A match will cause the request to be accepted if true, rejected if false.
+          # If there is no match, reject by default
+          "[RT:(POST|PUT),.*]": true
+

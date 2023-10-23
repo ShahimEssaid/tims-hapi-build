@@ -14,9 +14,9 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <hapi-fhir-jpaserver-starter-build.version>6.8.0-b1-SNAPSHOT</hapi-fhir-jpaserver-starter-build.version>
         <hapi-fhir.version>6.8.0</hapi-fhir.version>
-        <hapi-fhir-jpaserver-starter-builds.version>6.8.0-b1-SNAPSHOT</hapi-fhir-jpaserver-starter-builds.version>
-        <hapi-extensions.version>0.4.0-6.8.0-SNAPSHOT</hapi-extensions.version>
+        <hapi-extensions.version>6.8.0-0.4.0-SNAPSHOT</hapi-extensions.version>
     </properties>
 
     <repositories>
@@ -30,17 +30,16 @@
     </repositories>
 
     <dependencies>
-
         <dependency>
             <groupId>com.essaid.fhir.hapi</groupId>
-            <artifactId>com.essaid.fhir.hapi.hapi-fhir-jpaserver-starter-build</artifactId>
-            <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
+            <artifactId>hapi-fhir-jpaserver-starter-build</artifactId>
+            <version>${hapi-fhir-jpaserver-starter-build.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.essaid.fhir.hapi</groupId>
             <artifactId>hapi-fhir-jpaserver-starter-build</artifactId>
-            <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
+            <version>${hapi-fhir-jpaserver-starter-build.version}</version>
             <classifier>build-overlay</classifier>
             <type>war</type>
         </dependency>
@@ -48,7 +47,7 @@
         <dependency>
             <groupId>com.essaid.fhir.hapi</groupId>
             <artifactId>hapi-fhir-jpaserver-starter-build</artifactId>
-            <version>${hapi-fhir-jpaserver-starter-builds.version}</version>
+            <version>${hapi-fhir-jpaserver-starter-build.version}</version>
             <classifier>starter-overlay</classifier>
             <type>war</type>
         </dependency>
@@ -62,7 +61,7 @@
 
         <dependency>
             <groupId>com.essaid.fhir.hapi</groupId>
-            <artifactId>com.essaid.fhir.hapi.hapi-extensions</artifactId>
+            <artifactId>hapi-extensions</artifactId>
             <version>${hapi-extensions.version}</version>
         </dependency>
     </dependencies>

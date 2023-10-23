@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 import java.io.IOException;
 
 @SpringBootApplication()
-@Import({Application.class, ShutdownOperation.class, ExitManager.class})
+@Import({Application.class, ExitManager.class})
 public class TimsServer {
 
     public static void main(String[] args) throws InterruptedException, IOException {
@@ -23,3 +23,4 @@ public class TimsServer {
         System.exit(exitCode);
     }
 }
+

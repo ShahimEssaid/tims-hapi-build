@@ -17,4 +17,4 @@ DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
 cd "$DIR"/..
 
-./mvnw clean verify
+./mvnw -U clean verify

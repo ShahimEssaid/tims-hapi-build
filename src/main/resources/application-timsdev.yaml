@@ -1,0 +1,10 @@
+
+#hapi:
+#  fhir:
+#    enforce_referential_integrity_on_write: false
+#    enforce_referential_integrity_on_delete: false
+
+hapi:
+  fhir:
+    enforce-referential-integrity-on-write: false
+    enforce-referential-integrity-on-delete: false

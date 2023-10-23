@@ -1,0 +1,40 @@
+###
+GET {{fhir-endpoint}}/metadata
+
+
+###
+GET {{fhir-endpoint}}/CodeSystem/1
+Content-Type: application/fhir+json
+
+
+###
+POST {{fhir-endpoint}}/CodeSystem
+Content-Type: application/fhir+json
+Authorization: Basic user password
+
+< resource/r4/codesystem-example.json
+
+
+###
+PUT {{fhir-endpoint}}/CodeSystem/1
+Content-Type: application/fhir+json
+Authorization: Basic user password
+
+< resource/r4/codesystem-example.json
+
+###
+POST {{fhir-endpoint}}/Observation
+Content-Type: application/fhir+json
+Authorization: Basic user password
+
+< resource/r4/observation-example-f001-glucose.json
+
+###
+GET {{fhir-endpoint}}/Observation/53
+Content-Type: application/fhir+json
+Authorization: Basic user password
+
+###
+GET {{fhir-endpoint}}/CodeSystem/$text-search?search-string=SChol
+Content-Type: application/fhir+json
+
